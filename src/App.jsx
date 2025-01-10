@@ -8,7 +8,6 @@ function App() {
 
   useEffect(() => {
     fetch(BACKEND_ENDPOINT).then(res => res.json()).then(json => {
-      console.log(json);
       setSolution(json);
     });
   }, [setSolution]);
