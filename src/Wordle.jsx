@@ -10,11 +10,7 @@ const Wordle = ({ solution }) => {
     useEffect(() => {
         window.addEventListener('keyup', handleKeyupEvent);
 
-        if (turn > 5) {
-            window.removeEventListener('keyup', handleKeyupEvent);
-        }
-
-        if (isCorrect) {
+        if (turn > 5 || isCorrect) {
             window.removeEventListener('keyup', handleKeyupEvent);
         }
 
@@ -26,7 +22,7 @@ const Wordle = ({ solution }) => {
         <>
             <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
             <Keyboard pressedKeys={pressedKeys} />
-            <Modal isVisible={isCorrect} />
+            <Modal isVisible={turn === 5 || isCorrect} isCorrect={isCorrect} solution={solution} />
         </>
     )
 }
