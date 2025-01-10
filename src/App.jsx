@@ -5,7 +5,7 @@ import Wordle from './Wordle';
 function App() {
   const [solution, setSolution] = useState('');
   const BACKEND_ENDPOINT = import.meta.env.VITE_BACKEND_ENDPOINT;
-  console.log(BACKEND_ENDPOINT)
+
   useEffect(() => {
     fetch(BACKEND_ENDPOINT).then(res => res.json()).then(json => {
       console.log(json);
