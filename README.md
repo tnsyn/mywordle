@@ -1,3 +1,3 @@
 # Zero Cooldown Wordle
 
-Just for fun. [zerocooldownwordle.netlify.app](zerocooldownwordle.netlify.app).
+Just for fun. [https://zerocooldownwordle.netlify.app](https://zerocooldownwordle.netlify.app).
