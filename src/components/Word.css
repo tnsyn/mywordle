@@ -1,0 +1,87 @@
+.word {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .word > div {
+    display: block;
+    width: 50px;
+    height: 60px;
+    border: 1px solid #bbb;
+    margin: 4px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.5em;
+  }
+
+  .word > div.green {
+    --background: #538d4e;
+    --border-color: #538d4e;
+    animation: flip 0.8s ease forwards;
+  }
+  .word > div.grey {
+    --background: #3a3a3c;
+    --border-color: #3a3a3c;
+    animation: flip 0.8s ease forwards;
+  }
+  .word > div.yellow {
+    --background: #b59f3b;
+    --border-color: #b59f3b;
+    animation: flip 0.8s ease forwards;
+  }
+  .word > div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .word > div:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .word > div:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  .word > div:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  .word.current > div.filled {
+    animation: bounce 0.2s ease-in-out forwards;
+  }
+  
+  @keyframes bounce {
+    0% { 
+      transform: scale(1);
+      border-color: #ddd;
+    }
+    50% { 
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      border-color: #333;
+    }
+  }
+  
+/* keyframe animations */
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+    background: #121213;
+    border-color: #121213;
+  }
+  45% {
+    transform: rotateX(90deg);
+    background: #121213;
+    border-color: #121213;
+  }
+  55% {
+    transform: rotateX(90deg);
+    background: var(--background);
+    border-color: var(--border-color);
+  }
+  100% {
+    transform: rotateX(0deg);
+    background: var(--background);
+    border-color: var(--border-color);
+  }
+}
